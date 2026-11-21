@@ -1,9 +1,7 @@
 function NoteCard({content}) {
   return (
-    <div>
-      <p>{content}</p>
-    </div>
-  )
+    <h1>{content}</h1>
+  );
 }
 
-export default NoteCard
+export default NoteCard;

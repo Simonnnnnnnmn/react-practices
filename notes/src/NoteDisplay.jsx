@@ -1,22 +1,23 @@
-import NoteCard from "./NoteCard"
+import NoteCard from "./NoteCard";
 
-function NoteDisplay({notes, onDeleteNote}) {
-  return (
-    <div>
-    { notes.length === 0 ? 
-      <p>No notes</p>: 
-      notes.map(note => (
-        <div key={note.id}>
-          <NoteCard content={note.content}/>
-          <button onClick={() => onDeleteNote(note.id)}>Delete</button>
-        </div>
+function NoteDisplay({notes, deleteNote}) {
+    return (
+        <>
+        {
+            notes.map((note) => {
+                return <>
+                <NoteCard 
+                        key={note.id}
+                        content={note.content}
+                        />
 
-      
-      ))
-    }
-    </div>
-  )
-
+                <button onClick={() => deleteNote(note.id)}>Delete</button>
+                </>
+            })
+            
+        }
+        </>
+    )
 }
 
-export default NoteDisplay
+export default NoteDisplay;
